@@ -1,7 +1,7 @@
-# from grille import Grille
+from grille import Grille
 
-# # 1. Créer grille de 5 lignes et 8 colonnes
-# grille = Grille(5, 8)
+# 1. Créer grille de 5 lignes et 8 colonnes
+grille = Grille(5, 8)
 
 # while True:
 #     # 2. Afficher la grille
