@@ -1,4 +1,5 @@
 from grille import Grille
+from random import randrange
 
 
 def test_init():
@@ -28,3 +29,11 @@ def test_matrice():
     assert grille2.matrice == ["~"] * 16
     grille3 = Grille(4, 4)
     assert grille3.matrice == ["~"] * 16
+
+
+def test_tirer():
+    grille = Grille(5, 8)
+    x = randrange(0, 5)
+    y = randrange(0, 8)
+    grille.tirer(x, y)
+    assert grille.matrice[x * grille.nombre_colonnes + y] == "x"

@@ -4,3 +4,6 @@ class Grille:
         self.vide = "~"
         self.tir_marqué = "x"
         self.matrice = [self.vide] * (nombre_lignes * nombre_colonnes)
+
+    def tirer(self, x, y):
+        self.matrice[x * self.nombre_colonnes + y] = self.tir_marqué
