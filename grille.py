@@ -1,4 +1,4 @@
-from bateau import PorteAvion, Croiseur, Torpilleur, SousMarin
+from bateau import Bateau, PorteAvion, Croiseur, Torpilleur, SousMarin
 
 
 class Grille:
@@ -50,3 +50,23 @@ class Grille:
             if self.matrice[position[0] * self.nombre_colonnes + position[1]] != "~":
                 return False
         return True
+
+    def positions_possibles_bateau(self, longueur_bateau):
+        positions_possibles = []
+        for i in range(len(self.matrice) // self.nombre_colonnes):
+            for j in range(self.nombre_colonnes):
+                if (
+                    self.chevauchement(
+                        Bateau(i, j, longueur=longueur_bateau, vertical=False)
+                    )
+                    is True
+                ):
+                    positions_possibles.append((i, j))
+                if (
+                    self.chevauchement(
+                        Bateau(i, j, longueur=longueur_bateau, vertical=True)
+                    )
+                    is True
+                ):
+                    positions_possibles.append((i, j))
+        return positions_possibles

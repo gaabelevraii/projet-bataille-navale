@@ -81,3 +81,9 @@ def test_chevauchement_invalide():
     grille = Grille(2, 4)
     grille.ajoute(PorteAvion(1, 0, vertical=False))
     assert grille.chevauchement(Torpilleur(0, 0, vertical=False)) is True
+
+
+def test_positions_possibles():
+    grille = Grille(2, 4)
+    grille.ajoute(PorteAvion(1, 0, vertical=False))
+    assert grille.positions_possibles_bateau(2) == [(0, 0), (0, 1), (0, 2)]
