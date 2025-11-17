@@ -4,14 +4,14 @@ from grille import Grille
 grille = Grille(5, 8)
 
 while True:
-    #     # 2. Afficher la grille
-    #     grille.afficher()
+    # 2. Afficher la grille
+    print(grille)
     # 3. Demander à l'utilisateur les coordonnées x et y du tir
     coordonnées = input("Entrez une coordonnée sous la forme (x,y): ")
     coordonnées = coordonnées.strip().replace("(", "").replace(")", "")
     x_str, y_str = coordonnées.split(",")
-    x = int(x_str)
-    y = int(y_str)
+    x = int(x_str) - 1
+    y = int(y_str) - 1
     # 4. Tirer à l'endroit indiqué sur la grille
     grille.tirer(x, y)
     # 5. Retour en 2. par while(True)
