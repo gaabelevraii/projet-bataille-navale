@@ -105,5 +105,20 @@ def test_vertical_torpilleur():
 
 
 def test_init_sousmarin():
-    s = SousMarin()
+    s = SousMarin(2, 3)
     assert isinstance(s, SousMarin)
+    assert isinstance(s, Bateau)
+
+
+def test_longueur_sousmarin():
+    s = SousMarin(2, 3)
+    assert s.longueur == 2
+
+
+def test_vertical_sousmarin():
+    s1 = Torpilleur(2, 3, False)
+    assert s1.vertical is False
+    s2 = SousMarin(2, 3)
+    assert s2.vertical is False
+    s3 = SousMarin(2, 3, True)
+    assert s3.vertical is True
