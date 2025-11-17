@@ -16,7 +16,7 @@ class Bateau:
         for position in self.positions:
             if (
                 grille.matrice[position[0] * grille.nombre_colonnes + position[1]]
-                != "x"
+                != "💣"
             ):
                 return False
         return True
@@ -40,4 +40,3 @@ class Torpilleur(Bateau):
 class SousMarin(Bateau):
     def __init__(self, ligne, colonne, vertical=False):
         super().__init__(ligne, colonne, longueur=2, vertical=vertical)
-

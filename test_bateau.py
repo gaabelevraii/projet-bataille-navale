@@ -39,8 +39,8 @@ def test_positions_horizontal():
 def test_coulé():
     grille = Grille(2, 3)
     bateau = Bateau(1, 0, 2, False)
-    grille.tirer(1, 0)
-    grille.tirer(1, 1)
+    grille.tirer(1, 0, "💣")
+    grille.tirer(1, 1, "💣")
     assert bateau.coulé(grille) is True
 
 
