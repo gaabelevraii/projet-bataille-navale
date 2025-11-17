@@ -116,7 +116,7 @@ def test_longueur_sousmarin():
 
 
 def test_vertical_sousmarin():
-    s1 = Torpilleur(2, 3, False)
+    s1 = SousMarin(2, 3, False)
     assert s1.vertical is False
     s2 = SousMarin(2, 3)
     assert s2.vertical is False
