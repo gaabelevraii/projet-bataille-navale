@@ -1,3 +1,6 @@
+from bateau import PorteAvion, Croiseur, Torpilleur, SousMarin
+
+
 class Grille:
     def __init__(self, nombre_lignes, nombre_colonnes):
         self.nombre_colonnes = nombre_colonnes
@@ -29,5 +32,15 @@ class Grille:
             > 0
         ):
             return "Le bateau dépasse de la grille!"
-        for position in bateau.positions:
-            self.matrice[position[0] * self.nombre_colonnes + position[1]] = "⛵"
+        if isinstance(bateau, PorteAvion) is True:
+            for position in bateau.positions:
+                self.matrice[position[0] * self.nombre_colonnes + position[1]] = "🚢"
+        elif isinstance(bateau, Croiseur) is True:
+            for position in bateau.positions:
+                self.matrice[position[0] * self.nombre_colonnes + position[1]] = "⛴"
+        elif isinstance(bateau, Torpilleur) is True:
+            for position in bateau.positions:
+                self.matrice[position[0] * self.nombre_colonnes + position[1]] = "🚣"
+        elif isinstance(bateau, SousMarin) is True:
+            for position in bateau.positions:
+                self.matrice[position[0] * self.nombre_colonnes + position[1]] = "🐟"

@@ -1,7 +1,7 @@
 from random import randrange
 
 from grille import Grille
-from bateau import Bateau
+from bateau import Bateau, PorteAvion, Croiseur, Torpilleur, SousMarin
 
 
 def test_init():
@@ -42,16 +42,27 @@ def test___str__():
 
 
 def test_ajoute_valide():
-    grille = Grille(2, 3)
-    grille.ajoute(Bateau(1, 0, longueur=2, vertical=False))
-    assert grille.matrice == [
+    grille1 = Grille(2, 4)
+    grille1.ajoute(PorteAvion(1, 0, vertical=False))
+    assert grille1.matrice == ["~", "~", "~", "~", "🚢", "🚢", "🚢", "🚢"]
+    grille2 = Grille(2, 4)
+    grille2.ajoute(Croiseur(1, 0, vertical=False))
+    assert grille2.matrice == [
         "~",
         "~",
         "~",
-        "⛵",
-        "⛵",
+        "~",
+        "⛴",
+        "⛴",
+        "⛴",
         "~",
     ]
+    grille3 = Grille(2, 4)
+    grille3.ajoute(Torpilleur(1, 0, vertical=False))
+    assert grille3.matrice == ["~", "~", "~", "~", "🚣", "🚣", "~", "~"]
+    grille4 = Grille(2, 4)
+    grille4.ajoute(SousMarin(1, 0, vertical=False))
+    assert grille4.matrice == ["~", "~", "~", "~", "🐟", "🐟", "~", "~"]
 
 
 def test_ajoute_invalide():
