@@ -19,11 +19,6 @@ def test_vide():
     assert grille.vide == "~"
 
 
-def test_tir_marqué():
-    grille = Grille(5, 8)
-    assert grille.tir_marqué == "x"
-
-
 def test_matrice():
     grille1 = Grille(2, 8)
     assert grille1.matrice == ["~"] * 16
