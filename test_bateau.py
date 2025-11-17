@@ -1,4 +1,4 @@
-from bateau import Bateau, PorteAvion, Croiseur, Torpilleur
+from bateau import Bateau, PorteAvion, Croiseur, Torpilleur, SousMarin
 from grille import Grille
 
 
@@ -102,3 +102,8 @@ def test_vertical_torpilleur():
     assert t2.vertical is False
     t3 = Torpilleur(2, 3, True)
     assert t3.vertical is True
+
+
+def test_init_sousmarin():
+    s = SousMarin()
+    assert isinstance(s, SousMarin)
