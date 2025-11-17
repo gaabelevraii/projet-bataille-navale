@@ -27,9 +27,9 @@ def test_longueur():
 
 def test_positions_vertical():
     bateau = Bateau(2, 3, longueur=3, vertical=True)
-    assert bateau.positions() == [(2, 3), (3, 3), (4, 3)]
+    assert bateau.positions == [(2, 3), (3, 3), (4, 3)]
 
 
 def test_positions_horizontal():
     bateau = Bateau(2, 3, longueur=3)
-    assert bateau.positions() == [(2, 3), (2, 4), (2, 5)]
+    assert bateau.positions == [(2, 3), (2, 4), (2, 5)]
