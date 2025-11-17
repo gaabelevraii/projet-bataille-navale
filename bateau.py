@@ -20,3 +20,7 @@ class Bateau:
             ):
                 return False
         return True
+
+
+class PorteAvion:
+    pass

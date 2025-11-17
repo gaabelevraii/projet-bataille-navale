@@ -1,4 +1,4 @@
-from bateau import Bateau
+from bateau import Bateau, PorteAvion
 from grille import Grille
 
 
@@ -42,3 +42,8 @@ def test_coulé():
     grille.tirer(1, 0)
     grille.tirer(1, 1)
     assert bateau.coulé(grille) is True
+
+
+def test_init_porteavions():
+    pa = PorteAvion()
+    assert isinstance(pa, PorteAvion)
