@@ -61,12 +61,12 @@ class Grille:
                     )
                     is True
                 ):
-                    positions_possibles.append((i, j))
+                    positions_possibles.append((i, j, False))
                 if (
                     self.chevauchement(
                         Bateau(i, j, longueur=longueur_bateau, vertical=True)
                     )
                     is True
                 ):
-                    positions_possibles.append((i, j))
+                    positions_possibles.append((i, j, True))
         return positions_possibles
