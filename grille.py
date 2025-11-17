@@ -21,17 +21,6 @@ class Grille:
         return grille_string
 
     def ajoute(self, bateau):
-        if (
-            bateau.vertical is False
-            and bateau.colonne + bateau.longueur - self.nombre_colonnes > 0
-        ) or (
-            bateau.vertical is True
-            and bateau.ligne
-            + bateau.longueur
-            - len(self.matrice) // self.nombre_colonnes
-            > 0
-        ):
-            return "Le bateau dépasse de la grille!"
         if isinstance(bateau, PorteAvion) is True:
             for position in bateau.positions:
                 self.matrice[position[0] * self.nombre_colonnes + position[1]] = "🚢"
@@ -46,6 +35,17 @@ class Grille:
                 self.matrice[position[0] * self.nombre_colonnes + position[1]] = "🐟"
 
     def chevauchement(self, bateau):
+        if (
+            bateau.vertical is False
+            and bateau.colonne + bateau.longueur - self.nombre_colonnes > 0
+        ) or (
+            bateau.vertical is True
+            and bateau.ligne
+            + bateau.longueur
+            - len(self.matrice) // self.nombre_colonnes
+            > 0
+        ):
+            return False
         for position in bateau.positions:
             if self.matrice[position[0] * self.nombre_colonnes + position[1]] != "~":
                 return False

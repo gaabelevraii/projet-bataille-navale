@@ -65,26 +65,10 @@ def test_ajoute_valide():
     assert grille4.matrice == ["~", "~", "~", "~", "🐟", "🐟", "~", "~"]
 
 
-def test_ajoute_invalide():
+def test_chevauchement_dépassement():
     grille = Grille(2, 3)
-    grille.ajoute(Bateau(1, 0, longueur=2, vertical=True))
-    assert grille.matrice == [
-        "~",
-        "~",
-        "~",
-        "~",
-        "~",
-        "~",
-    ]
-    grille.ajoute(Bateau(1, 0, longueur=4, vertical=True))
-    assert grille.matrice == [
-        "~",
-        "~",
-        "~",
-        "~",
-        "~",
-        "~",
-    ]
+    assert grille.chevauchement(Bateau(1, 0, longueur=2, vertical=True)) is False
+    assert grille.chevauchement(Bateau(1, 0, longueur=4, vertical=True)) is False
 
 
 def test_chevauchement_valide():
