@@ -32,5 +32,6 @@ class Croiseur(Bateau):
         super().__init__(ligne, colonne, longueur=3, vertical=vertical)
 
 
-class Torpilleur:
-    pass
+class Torpilleur(Bateau):
+    def __init__(self, ligne, colonne, vertical=False):
+        super().__init__(ligne, colonne, longueur=2, vertical=vertical)

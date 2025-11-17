@@ -85,5 +85,20 @@ def test_vertical_croiseur():
 
 
 def test_init_torpilleur():
-    t = Torpilleur()
+    t = Torpilleur(2, 3)
     assert isinstance(t, Torpilleur)
+    assert isinstance(t, Bateau)
+
+
+def test_longueur_torpilleur():
+    t = Torpilleur(2, 3)
+    assert t.longueur == 2
+
+
+def test_vertical_torpilleur():
+    t1 = Torpilleur(2, 3, False)
+    assert t1.vertical is False
+    t2 = Torpilleur(2, 3)
+    assert t2.vertical is False
+    t3 = Torpilleur(2, 3, True)
+    assert t3.vertical is True
