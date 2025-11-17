@@ -44,3 +44,9 @@ class Grille:
         elif isinstance(bateau, SousMarin) is True:
             for position in bateau.positions:
                 self.matrice[position[0] * self.nombre_colonnes + position[1]] = "🐟"
+
+    def chevauchement(self, bateau):
+        for position in bateau.positions:
+            if self.matrice[position[0] * self.nombre_colonnes + position[1]] != "~":
+                return False
+        return True

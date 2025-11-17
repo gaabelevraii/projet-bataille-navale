@@ -85,3 +85,15 @@ def test_ajoute_invalide():
         "~",
         "~",
     ]
+
+
+def test_chevauchement_valide():
+    grille = Grille(2, 4)
+    grille.ajoute(PorteAvion(1, 0, vertical=False))
+    assert grille.chevauchement(Torpilleur(0, 0, vertical=True)) is False
+
+
+def test_chevauchement_invalide():
+    grille = Grille(2, 4)
+    grille.ajoute(PorteAvion(1, 0, vertical=False))
+    assert grille.chevauchement(Torpilleur(0, 0, vertical=False)) is True
