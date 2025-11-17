@@ -7,3 +7,13 @@ class Grille:
 
     def tirer(self, x, y):
         self.matrice[x * self.nombre_colonnes + y] = self.tir_marqué
+
+    def __str__(self):
+        grille_string = ""
+        nombre_lignes = len(self.matrice) // self.nombre_colonnes
+        for i in range(nombre_lignes):
+            for j in range(0, self.nombre_colonnes):
+                grille_string += self.matrice[i * self.nombre_colonnes + j]
+            if i < nombre_lignes - 1:
+                grille_string += "\n"
+        return grille_string

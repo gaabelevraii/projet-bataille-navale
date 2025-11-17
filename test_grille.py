@@ -37,3 +37,8 @@ def test_tirer():
     y = randrange(0, 8)
     grille.tirer(x, y)
     assert grille.matrice[x * grille.nombre_colonnes + y] == "x"
+
+
+def test___str__():
+    grille = Grille(6, 5)
+    assert grille.__str__() == "~~~~~\n~~~~~\n~~~~~\n~~~~~\n~~~~~\n~~~~~"
