@@ -1,4 +1,5 @@
 from bateau import Bateau
+from grille import Grille
 
 
 def test_init():
@@ -33,3 +34,11 @@ def test_positions_vertical():
 def test_positions_horizontal():
     bateau = Bateau(2, 3, longueur=3)
     assert bateau.positions == [(2, 3), (2, 4), (2, 5)]
+
+
+def test_coulé():
+    grille = Grille(2, 3)
+    bateau = Bateau(1, 0, 2, False)
+    grille.tirer(1, 0)
+    grille.tirer(1, 1)
+    assert bateau.coulé(grille) is True

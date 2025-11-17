@@ -1,6 +1,3 @@
-from bateau import Bateau
-
-
 class Grille:
     def __init__(self, nombre_lignes, nombre_colonnes):
         self.nombre_colonnes = nombre_colonnes
@@ -20,7 +17,7 @@ class Grille:
                 grille_string += "\n"
         return grille_string
 
-    def ajoute(self, bateau: Bateau):
+    def ajoute(self, bateau):
         if (
             bateau.vertical is False
             and bateau.colonne + bateau.longueur - self.nombre_colonnes > 0
