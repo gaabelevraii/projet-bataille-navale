@@ -65,5 +65,20 @@ def test_vertical_porteavions():
 
 
 def test_init_croiseur():
-    c = Croiseur()
+    c = Croiseur(2, 3)
     assert isinstance(c, Croiseur)
+    assert isinstance(c, Bateau)
+
+
+def test_longueur_croiseur():
+    c = Croiseur(2, 3)
+    assert c.longueur == 3
+
+
+def test_vertical_croiseur():
+    c1 = Croiseur(2, 3, False)
+    assert c1.vertical is False
+    c2 = Croiseur(2, 3)
+    assert c2.vertical is False
+    c3 = Croiseur(2, 3, True)
+    assert c3.vertical is True
