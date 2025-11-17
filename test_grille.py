@@ -1,5 +1,7 @@
-from grille import Grille
 from random import randrange
+
+from grille import Grille
+from bateau import Bateau
 
 
 def test_init():
@@ -42,3 +44,38 @@ def test_tirer():
 def test___str__():
     grille = Grille(6, 5)
     assert grille.__str__() == "~~~~~\n~~~~~\n~~~~~\n~~~~~\n~~~~~\n~~~~~"
+
+
+def test_ajoute_valide():
+    grille = Grille(2, 3)
+    grille.ajoute(Bateau(1, 0, longueur=2, vertical=False))
+    assert grille.matrice == [
+        "~",
+        "~",
+        "~",
+        "⛵",
+        "⛵",
+        "~",
+    ]
+
+
+def test_ajoute_invalide():
+    grille = Grille(2, 3)
+    grille.ajoute(Bateau(1, 0, longueur=2, vertical=True))
+    assert grille.matrice == [
+        "~",
+        "~",
+        "~",
+        "~",
+        "~",
+        "~",
+    ]
+    grille.ajoute(Bateau(1, 0, longueur=4, vertical=True))
+    assert grille.matrice == [
+        "~",
+        "~",
+        "~",
+        "~",
+        "~",
+        "~",
+    ]

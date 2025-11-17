@@ -1,3 +1,6 @@
+from bateau import Bateau
+
+
 class Grille:
     def __init__(self, nombre_lignes, nombre_colonnes):
         self.nombre_colonnes = nombre_colonnes
@@ -17,3 +20,18 @@ class Grille:
             if i < nombre_lignes - 1:
                 grille_string += "\n"
         return grille_string
+
+    def ajoute(self, bateau: Bateau):
+        if (
+            bateau.vertical is False
+            and bateau.colonne + bateau.longueur - self.nombre_colonnes > 0
+        ) or (
+            bateau.vertical is True
+            and bateau.ligne
+            + bateau.longueur
+            - len(self.matrice) // self.nombre_colonnes
+            > 0
+        ):
+            return "Le bateau dépasse de la grille!"
+        for position in bateau.positions:
+            self.matrice[position[0] * self.nombre_colonnes + position[1]] = "⛵"
