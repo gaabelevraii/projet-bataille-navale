@@ -22,5 +22,6 @@ class Bateau:
         return True
 
 
-class PorteAvion:
-    pass
+class PorteAvion(Bateau):
+    def __init__(self, ligne, colonne, vertical=False):
+        super().__init__(ligne, colonne, longueur=4, vertical=vertical)

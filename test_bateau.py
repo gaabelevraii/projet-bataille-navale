@@ -45,5 +45,20 @@ def test_coulé():
 
 
 def test_init_porteavions():
-    pa = PorteAvion()
+    pa = PorteAvion(2, 3)
     assert isinstance(pa, PorteAvion)
+    assert isinstance(pa, Bateau)
+
+
+def test_longueur_porteavions():
+    pa = PorteAvion(2, 3)
+    assert pa.longueur == 4
+
+
+def test_vertical_porteavions():
+    pa1 = PorteAvion(2, 3, False)
+    assert pa1.vertical is False
+    pa2 = PorteAvion(2, 3)
+    assert pa2.vertical is False
+    pa3 = PorteAvion(2, 3, True)
+    assert pa3.vertical is True
