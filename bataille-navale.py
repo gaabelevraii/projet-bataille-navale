@@ -45,7 +45,9 @@ while len(liste_bateaux_placés) != 0:
     print(grille)
     coordonnées_valides = False
     while coordonnées_valides is False:
-        coordonnées = input("Entrez une coordonnée sous la forme (x,y): ")
+        coordonnées = input(
+            "Entrez une coordonnée sous la forme (n° de ligne, n° de colonne): "
+        )
         coordonnées = coordonnées.strip().replace("(", "").replace(")", "")
         x_str, y_str = coordonnées.split(",")
         x = int(x_str) - 1
