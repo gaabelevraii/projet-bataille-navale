@@ -1,4 +1,4 @@
-from bateau import Bateau, PorteAvion, Croiseur
+from bateau import Bateau, PorteAvion, Croiseur, Torpilleur
 from grille import Grille
 
 
@@ -82,3 +82,8 @@ def test_vertical_croiseur():
     assert c2.vertical is False
     c3 = Croiseur(2, 3, True)
     assert c3.vertical is True
+
+
+def test_init_torpilleur():
+    t = Torpilleur()
+    assert isinstance(t, Torpilleur)
