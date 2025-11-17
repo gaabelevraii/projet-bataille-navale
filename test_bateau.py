@@ -1,4 +1,4 @@
-from bateau import Bateau, PorteAvion
+from bateau import Bateau, PorteAvion, Croiseur
 from grille import Grille
 
 
@@ -62,3 +62,8 @@ def test_vertical_porteavions():
     assert pa2.vertical is False
     pa3 = PorteAvion(2, 3, True)
     assert pa3.vertical is True
+
+
+def test_init_croiseur():
+    c = Croiseur()
+    assert isinstance(c, Croiseur)
